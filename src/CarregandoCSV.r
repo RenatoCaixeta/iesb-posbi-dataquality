@@ -26,3 +26,20 @@ desvio.altura<-sd(altura)
 gigantes <-altura[altura>media.altura+4*desvio.altura]
 gigantes<-gigantes/100
 gigantes
+
+str(censo)
+view(censo)
+censo$IMC
+censo$IMC <- (censo$Peso.kg/(censo$Altura.cm/100))^2
+censo[1:10,c("Nome")]
+      
+install.packages("dplyr")
+library(dplyr)
+
+fumantes.por.sexo <-censo%>%
+     filter(Fuma==1)%>%
+     group_by(Sexo)%>%
+     summarise(quantidade=n())
+View(fumantes.por.sexo)
+
+hist(censo$Altura.cm)
