@@ -1,0 +1,1 @@
+#Exercicio dentro de sala para normalizar a tabela de arquivo
